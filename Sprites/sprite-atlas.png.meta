@@ -710,7 +710,7 @@ TextureImporter:
         x: 1525
         y: 1806
         width: 313
-        height: 180
+        height: 118
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2035,8 +2035,8 @@ TextureImporter:
       sprite-atlas_2: -1664054038
       sprite-atlas_63: -789153520
       sprite-atlas_47: -1658297813
-      sprite-atlas_42: 502072126
       potion: 109463510
+      sprite-atlas_42: 502072126
       coin-3: -1372793122
       sprite-atlas_68: -36709213
       sprite-atlas_60: -1567010901
