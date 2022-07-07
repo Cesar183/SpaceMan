@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 {
     public GameState currentGameState = GameState.menu;
     public static GameManager sharedInstance;
+    private PlayerController controller;
     void Awake()
     {
         if(sharedInstance==null)
@@ -21,13 +22,13 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        
+        controller = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Submit")) //(Input.GetKeyDown(KeyCode.S)) Tecla S para iniciar el juego
+        if(Input.GetButtonDown("Submit") && currentGameState != GameState.inGame)//(Input.GetKeyDown(KeyCode.S)) Tecla S para iniciar el juego
         {
             StarGame();
         }
@@ -52,7 +53,7 @@ public class GameManager : MonoBehaviour
         }
         else if(newGameState == GameState.inGame)
         {
-            //Logica en Juego
+            controller.StartGame();
         }
         else if(newGameState == GameState.gameOver)
         {
