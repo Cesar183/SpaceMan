@@ -49,17 +49,18 @@ public class GameManager : MonoBehaviour
     {
         if(newGameState == GameState.menu)
         {
-            //Logica menu
+            MenuManager.sharedInstance.ShowMainMenu();
         }
         else if(newGameState == GameState.inGame)
         {
             LevelManager.sharedInstance.RemoveAllBlock();
             LevelManager.sharedInstance.GenerateInitialLevelBlocks();
             controller.StartGame();
+            MenuManager.sharedInstance.HideMainMenu();
         }
         else if(newGameState == GameState.gameOver)
         {
-            //Logica fin de juego
+            MenuManager.sharedInstance.GameOverMenu();
         }
         this.currentGameState = newGameState;
     }
