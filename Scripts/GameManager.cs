@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameState currentGameState = GameState.menu;
     public static GameManager sharedInstance;
     private PlayerController controller;
+    public int collectedObject = 0;
     void Awake()
     {
         if(sharedInstance==null)
@@ -63,5 +64,9 @@ public class GameManager : MonoBehaviour
             MenuManager.sharedInstance.GameOverMenu();
         }
         this.currentGameState = newGameState;
+    }
+    public void CollectObject(Collectable collectable)
+    {
+        collectedObject += collectable.value;
     }
 }
