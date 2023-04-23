@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 9
-  runningSpeeed: 2
+  runningSpeeed: 3
   healthPoints: 0
   manaPoints: 0
   groundMask:

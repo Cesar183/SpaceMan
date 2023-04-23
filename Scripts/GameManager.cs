@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public static GameManager sharedInstance;
     private PlayerController controller;
     public int collectedObject = 0;
+    [SerializeField] int valueExtraLife = 10;
     void Awake()
     {
         if(sharedInstance == null)
@@ -57,6 +58,7 @@ public class GameManager : MonoBehaviour
         {
             LevelManager.sharedInstace.RemoveAllBlocks();
             LevelManager.sharedInstace.GenerateInitialBlocks();
+            collectedObject = 0;
             controller.StartGame();
             MenuManager.sharedInstance.HideMainMenu();
         }
@@ -69,5 +71,10 @@ public class GameManager : MonoBehaviour
     public void CollectObject(Collectable collectable)
     {
         collectedObject += collectable.value;
+        if(collectedObject >= 10)
+        {
+            collectedObject = 0;
+            controller.CollectHealth(valueExtraLife);
+        }
     }
 }
